@@ -3,10 +3,6 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Base class for all meal types in the meal planning system.
- * Contains common properties and methods for all meals.
- */
 public class Meal {
     private String name;
     private List<Ingredient> ingredients;
@@ -17,16 +13,10 @@ public class Meal {
     private String dietaryType; // vegetarian, keto, paleo, etc.
     private String description;
     
-    /**
-     * Default constructor
-     */
     public Meal() {
         this.ingredients = new ArrayList<>();
     }
     
-    /**
-     * Constructor with basic meal information
-     */
     public Meal(String name, String dietaryType, String description) {
         this.name = name;
         this.dietaryType = dietaryType;
@@ -34,9 +24,6 @@ public class Meal {
         this.ingredients = new ArrayList<>();
     }
     
-    /**
-     * Full constructor with all meal properties
-     */
     public Meal(String name, List<Ingredient> ingredients, String dietaryType, String description) {
         this.name = name;
         this.ingredients = ingredients;
@@ -45,9 +32,6 @@ public class Meal {
         calculateNutrition();
     }
     
-    /**
-     * Calculates the nutritional values based on ingredients
-     */
     public void calculateNutrition() {
         this.calories = 0;
         this.protein = 0;
@@ -62,17 +46,11 @@ public class Meal {
         }
     }
     
-    /**
-     * Adds an ingredient to the meal and updates nutrition
-     */
     public void addIngredient(Ingredient ingredient) {
         ingredients.add(ingredient);
         calculateNutrition();
     }
     
-    /**
-     * Removes an ingredient from the meal and updates nutrition
-     */
     public boolean removeIngredient(Ingredient ingredient) {
         boolean removed = ingredients.remove(ingredient);
         if (removed) {
@@ -80,8 +58,7 @@ public class Meal {
         }
         return removed;
     }
-    
-    // Getters and Setters
+
     public String getName() {
         return name;
     }
