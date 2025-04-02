@@ -170,8 +170,7 @@ public class NutritionAnalyzer {
         } else {
             bmr = 10 * weight + 6.25 * height - 5 * age - 161;
         }
-        
-        // Apply activity multiplier
+
         double activityMultiplier;
         switch (activityLevel) {
             case 1: activityMultiplier = 1.2; break;  // Sedentary
@@ -183,8 +182,7 @@ public class NutritionAnalyzer {
         }
         
         double maintenanceCalories = bmr * activityMultiplier;
-        
-        // Adjust calories based on goal
+
         double targetCalories;
         if (goal.equalsIgnoreCase("lose")) {
             targetCalories = maintenanceCalories - 500; // 500 calorie deficit for weight loss
