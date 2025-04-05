@@ -153,16 +153,14 @@ public class WeeklyPlanGenerator {
                 usedMealNames.get("Snack").add(selectedSnack1.getName());
 
                 // Add second snack if available
-                if (snackOptions.size() >= 2) {
+                if (filteredSnacks.size() > 1) {
                     // Remove the first selected snack from options
                     filteredSnacks.remove(selectedSnack1);
 
-                    // If we still have options, add another snack
-                    if (!filteredSnacks.isEmpty()) {
-                        Snack selectedSnack2 = getRandomMeal(filteredSnacks);
-                        weeklyPlan.get(day).add(selectedSnack2);
-                        usedMealNames.get("Snack").add(selectedSnack2.getName());
-                    }
+                    // Add another snack
+                    Snack selectedSnack2 = getRandomMeal(filteredSnacks);
+                    weeklyPlan.get(day).add(selectedSnack2);
+                    usedMealNames.get("Snack").add(selectedSnack2.getName());
                 }
             }
 
@@ -205,7 +203,14 @@ public class WeeklyPlanGenerator {
         // If we need more calories, add snacks
         if (currentCalories < targetCalories) {
             List<Snack> snackOptions = mealSuggester.suggestSnacks(null, false, false);
-            while (!snackOptions.isEmpty() && currentCalories < targetCalories * 0.9) {
+            
+            // Count existing snacks
+            long existingSnackCount = dayMeals.stream()
+                    .filter(meal -> meal instanceof Snack)
+                    .count();
+            
+            // Only add more snacks if we have less than 2
+            while (!snackOptions.isEmpty() && currentCalories < targetCalories * 0.9 && existingSnackCount < 2) {
                 // Filter out recently used snacks to ensure variety
                 List<Snack> filteredSnacks = snackOptions.stream()
                         .filter(s -> !usedMealNames.get("Snack").contains(s.getName()))
@@ -221,6 +226,7 @@ public class WeeklyPlanGenerator {
                 currentCalories += snack.getCalories();
                 usedMealNames.get("Snack").add(snack.getName());
                 snackOptions.remove(snack);
+                existingSnackCount++;
             }
         }
         // If we need fewer calories, replace high-calorie meals with lower-calorie alternatives
@@ -484,9 +490,10 @@ public class WeeklyPlanGenerator {
 
         // Get all available snacks
         List<Snack> allSnacks = mealSuggester.suggestSnacks(null, false, false);
-
-        // Add high-protein snacks if needed
-        if (neededProtein > 5) { // Only adjust if we need at least 5g more protein
+        int snackCount = 0;
+        
+        // Add high-protein snacks if needed and if we haven't reached the snack limit
+        if (neededProtein > 5 && snackCount < 2) { // Only adjust if we need at least 5g more protein
             List<Snack> highProteinSnacks = allSnacks.stream()
                     .filter(snack -> snack.getProtein() > 5) // Snacks with decent protein
                     .sorted((s1, s2) -> Double.compare(s2.getProtein(), s1.getProtein())) // Highest protein first
@@ -496,6 +503,7 @@ public class WeeklyPlanGenerator {
                 Snack proteinSnack = highProteinSnacks.get(0);
                 dayMeals.add(proteinSnack);
                 allSnacks.remove(proteinSnack);
+                snackCount++;
 
                 // Update needed macros
                 neededProtein -= proteinSnack.getProtein();
@@ -504,8 +512,8 @@ public class WeeklyPlanGenerator {
             }
         }
 
-        // Add high-carb snacks if needed
-        if (neededCarbs > 10) { // Only adjust if we need at least 10g more carbs
+        // Add high-carb snacks if needed and if we haven't reached the snack limit
+        if (neededCarbs > 10 && snackCount < 2) { // Only adjust if we need at least 10g more carbs
             List<Snack> highCarbSnacks = allSnacks.stream()
                     .filter(snack -> snack.getCarbs() > 10) // Snacks with decent carbs
                     .sorted((s1, s2) -> Double.compare(s2.getCarbs(), s1.getCarbs())) // Highest carbs first
@@ -515,6 +523,7 @@ public class WeeklyPlanGenerator {
                 Snack carbSnack = highCarbSnacks.get(0);
                 dayMeals.add(carbSnack);
                 allSnacks.remove(carbSnack);
+                snackCount++;
 
                 // Update needed macros
                 neededProtein -= carbSnack.getProtein();
@@ -523,8 +532,8 @@ public class WeeklyPlanGenerator {
             }
         }
 
-        // Add high-fat snacks if needed
-        if (neededFat > 5) { // Only adjust if we need at least 5g more fat
+        // Add high-fat snacks if needed and if we haven't reached the snack limit
+        if (neededFat > 5 && snackCount < 2) { // Only adjust if we need at least 5g more fat
             List<Snack> highFatSnacks = allSnacks.stream()
                     .filter(snack -> snack.getFat() > 5) // Snacks with decent fat
                     .sorted((s1, s2) -> Double.compare(s2.getFat(), s1.getFat())) // Highest fat first
@@ -533,6 +542,7 @@ public class WeeklyPlanGenerator {
             if (!highFatSnacks.isEmpty()) {
                 Snack fatSnack = highFatSnacks.get(0);
                 dayMeals.add(fatSnack);
+                snackCount++;
             }
         }
     }

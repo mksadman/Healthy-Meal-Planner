@@ -15,37 +15,40 @@ public class Main {
     private static List<Recipe> recipeDatabase;
     
     public static void main(String[] args) {
-        System.out.println("Welcome to the Healthy Meal Planner!");
+        System.out.println("Welcome to the Healthy Meal Planner!\n");
         initializeSystem();
         
         boolean running = true;
         while (running) {
             displayMainMenu();
-            int choice = getUserChoice(1, 8);
+            int choice = getUserChoice(1, 9);
             
             switch (choice) {
                 case 1:
-                    manageUserProfile();
-                    break;
-                case 2:
-                    viewMealSuggestions();
-                    break;
-                case 3:
-                    generateWeeklyPlan();
-                    break;
-                case 4:
-                    generateShoppingList();
-                    break;
-                case 5:
-                    analyzeNutrition();
-                    break;
-                case 6:
-                    manageRecipes();
-                    break;
-                case 7:
                     displayUserInfo();
                     break;
+                case 2:
+                    manageUserProfile();
+                    break;
+                case 3:
+                    viewMealSuggestions();
+                    break;
+                case 4:
+                    generateWeeklyPlan();
+                    break;
+                case 5:
+                    displayExistingWeeklyPlan();
+                    break;
+                case 6:
+                    generateShoppingList();
+                    break;
+                case 7:
+                    analyzeNutrition();
+                    break;
                 case 8:
+                    manageRecipes();
+                    break;
+                case 9:
                     running = false;
                     System.out.println("Thank you for using the Healthy Meal Planner. Goodbye!");
                     break;
@@ -63,106 +66,80 @@ public class Main {
         userProfileManager = new UserProfileManager();
         recipeDatabase = new ArrayList<>();
 
-        addSampleMeals();
-        addSampleRecipes();
+        // Load meals from text files instead of adding sample meals
+        loadMealsFromFiles();
 
+        // Load user profile if it exists
         if (userProfileManager.profileExists()) {
             currentUser = userProfileManager.loadUserProfile();
-            System.out.println("Welcome back, " + currentUser.getName() + "!");
+            System.out.println("\nWelcome back, " + currentUser.getName() + "!");
         } else {
-            System.out.println("Please create a user profile to get started.");
+            System.out.println("\nPlease create a user profile to get started.");
             createNewProfile();
+        }
+        
+        // Load weekly meal plan if it exists
+        if (weeklyPlanGenerator.weeklyPlanExists()) {
+            if (weeklyPlanGenerator.loadWeeklyPlan()) {
+                System.out.println("Your previous weekly meal plan has been loaded.");
+            } else {
+                System.out.println("Failed to load your previous weekly meal plan.");
+            }
         }
     }
 
-    private static void addSampleMeals() {
-        Ingredient egg = new Ingredient("Egg", 2, "units", 140, 12, 1, 10);
-        Ingredient bread = new Ingredient("Whole Wheat Bread", 2, "slices", 160, 8, 30, 2);
-        Ingredient avocado = new Ingredient("Avocado", 1, "unit", 240, 3, 12, 22);
-        Ingredient chicken = new Ingredient("Chicken Breast", 150, "g", 250, 45, 0, 5);
-        Ingredient rice = new Ingredient("Brown Rice", 100, "g", 130, 3, 28, 1);
-        Ingredient broccoli = new Ingredient("Broccoli", 100, "g", 55, 4, 11, 0.5);
-        Ingredient salmon = new Ingredient("Salmon Fillet", 150, "g", 280, 40, 0, 12);
-        Ingredient sweetPotato = new Ingredient("Sweet Potato", 150, "g", 130, 2, 30, 0);
-        Ingredient yogurt = new Ingredient("Greek Yogurt", 150, "g", 130, 15, 6, 4);
-        Ingredient berries = new Ingredient("Mixed Berries", 100, "g", 60, 1, 14, 0.5);
-        Ingredient nuts = new Ingredient("Mixed Nuts", 30, "g", 180, 6, 6, 16);
-
-        Breakfast avocadoToast = new Breakfast("Avocado Toast", "vegetarian", "Avocado on whole wheat toast with eggs");
-        avocadoToast.addIngredient(egg);
-        avocadoToast.addIngredient(bread);
-        avocadoToast.addIngredient(avocado);
-        avocadoToast.setHighProtein(true);
-        avocadoToast.setContainsCaffeine(false);
-        mealSuggester.addMeal(avocadoToast);
-
-        Lunch chickenRice = new Lunch("Chicken and Rice Bowl", "none", "Grilled chicken with brown rice and broccoli");
-        chickenRice.addIngredient(chicken);
-        chickenRice.addIngredient(rice);
-        chickenRice.addIngredient(broccoli);
-        chickenRice.setLowCarb(false);
-        chickenRice.setQuickPrep(true);
-        mealSuggester.addMeal(chickenRice);
-
-        Dinner salmonDinner = new Dinner("Baked Salmon", "none", "Baked salmon with sweet potato");
-        salmonDinner.addIngredient(salmon);
-        salmonDinner.addIngredient(sweetPotato);
-        salmonDinner.setHeartHealthy(true);
-        salmonDinner.setComfortFood(false);
-        mealSuggester.addMeal(salmonDinner);
-
-        Snack yogurtBerries = new Snack("Yogurt with Berries", "vegetarian", "Greek yogurt with mixed berries");
-        yogurtBerries.addIngredient(yogurt);
-        yogurtBerries.addIngredient(berries);
-        yogurtBerries.setLowCalorie(true);
-        yogurtBerries.setPortable(true);
-        mealSuggester.addMeal(yogurtBerries);
-
-        Snack mixedNuts = new Snack("Mixed Nuts", "vegan", "Assorted nuts");
-        mixedNuts.addIngredient(nuts);
-        mixedNuts.setLowCalorie(false);
-        mixedNuts.setPortable(true);
-        mealSuggester.addMeal(mixedNuts);
-    }
-
-    private static void addSampleRecipes() {
-        Recipe avocadoToast = new Recipe("Avocado Toast", 5, 5, 1, "Easy");
-        avocadoToast.addIngredient(new Ingredient("Whole Wheat Bread", 2, "slices", 160, 8, 30, 2));
-        avocadoToast.addIngredient(new Ingredient("Avocado", 1, "unit", 240, 3, 12, 22));
-        avocadoToast.addIngredient(new Ingredient("Salt", 1, "pinch", 0, 0, 0, 0));
-        avocadoToast.addIngredient(new Ingredient("Pepper", 1, "pinch", 0, 0, 0, 0));
-        avocadoToast.addPreparationStep("Toast the bread until golden brown.");
-        avocadoToast.addPreparationStep("Mash the avocado in a bowl.");
-        avocadoToast.addPreparationStep("Spread the mashed avocado on the toast.");
-        avocadoToast.addPreparationStep("Season with salt and pepper.");
-        recipeDatabase.add(avocadoToast);
-
-        Recipe chickenRice = new Recipe("Chicken and Rice Bowl", 10, 20, 2, "Medium");
-        chickenRice.addIngredient(new Ingredient("Chicken Breast", 300, "g", 500, 90, 0, 10));
-        chickenRice.addIngredient(new Ingredient("Brown Rice", 200, "g", 260, 6, 56, 2));
-        chickenRice.addIngredient(new Ingredient("Broccoli", 200, "g", 110, 8, 22, 1));
-        chickenRice.addIngredient(new Ingredient("Olive Oil", 15, "ml", 120, 0, 0, 14));
-        chickenRice.addIngredient(new Ingredient("Salt", 1, "tsp", 0, 0, 0, 0));
-        chickenRice.addIngredient(new Ingredient("Pepper", 1, "tsp", 0, 0, 0, 0));
-        chickenRice.addPreparationStep("Cook rice according to package instructions.");
-        chickenRice.addPreparationStep("Season chicken with salt and pepper.");
-        chickenRice.addPreparationStep("Heat olive oil in a pan and cook chicken until done.");
-        chickenRice.addPreparationStep("Steam broccoli until tender.");
-        chickenRice.addPreparationStep("Combine all ingredients in a bowl.");
-        recipeDatabase.add(chickenRice);
+    /**
+     * Loads meals from text files using the MealFileParser
+     */
+    private static void loadMealsFromFiles() {
+        // Define file paths
+        String breakfastFilePath = "breakfast.txt";
+        String lunchFilePath = "lunch.txt";
+        String dinnerFilePath = "dinner.txt";
+        String snacksFilePath = "snacks.txt";
+        
+        // Parse and add breakfast meals
+        List<Breakfast> breakfasts = MealFileParser.parseBreakfastFile(breakfastFilePath);
+        for (Breakfast breakfast : breakfasts) {
+            mealSuggester.addMeal(breakfast);
+        }
+        
+        // Parse and add lunch meals
+        List<Lunch> lunches = MealFileParser.parseLunchFile(lunchFilePath);
+        for (Lunch lunch : lunches) {
+            mealSuggester.addMeal(lunch);
+        }
+        
+        // Parse and add dinner meals
+        List<Dinner> dinners = MealFileParser.parseDinnerFile(dinnerFilePath);
+        for (Dinner dinner : dinners) {
+            mealSuggester.addMeal(dinner);
+        }
+        
+        // Parse and add snack options
+        List<Snack> snacks = MealFileParser.parseSnackFile(snacksFilePath);
+        for (Snack snack : snacks) {
+            mealSuggester.addMeal(snack);
+        }
+        
+        System.out.println("Loaded " + breakfasts.size() + " breakfast options");
+        System.out.println("Loaded " + lunches.size() + " lunch options");
+        System.out.println("Loaded " + dinners.size() + " dinner options");
+        System.out.println("Loaded " + snacks.size() + " snack options");
     }
 
     private static void displayMainMenu() {
         System.out.println("\n===== HEALTHY MEAL PLANNER MENU =====");
-        System.out.println("1. Manage User Profile");
-        System.out.println("2. View Meal Suggestions");
-        System.out.println("3. Generate Weekly Meal Plan");
-        System.out.println("4. Generate Shopping List");
-        System.out.println("5. Analyze Nutrition");
-        System.out.println("6. Manage Recipes");
-        System.out.println("7. Display User Information");
-        System.out.println("8. Exit");
-        System.out.print("Enter your choice (1-8): ");
+        System.out.println("1. Display User Information");
+        System.out.println("2. Manage User Profile");
+        System.out.println("3. View Meal Suggestions");
+        System.out.println("4. Generate Weekly Meal Plan");
+        System.out.println("5. View Existing Meal Plan");
+        System.out.println("6. Generate Shopping List");
+        System.out.println("7. Analyze Nutrition");
+        System.out.println("8. Manage Recipes");
+        System.out.println("9. Exit");
+        System.out.print("Enter your choice (1-9): ");
     }
 
     private static int getUserChoice(int min, int max) {
@@ -507,7 +484,15 @@ public class Main {
             return;
         }
         
-        System.out.println("\n===== GENERATE WEEKLY MEAL PLAN =====");
+        System.out.println("\n===== GENERATE NEW WEEKLY MEAL PLAN =====");
+        System.out.println("Note: This will create a new meal plan and overwrite any existing plan.");
+        System.out.print("Do you want to continue? (yes/no): ");
+        String confirm = scanner.nextLine().toLowerCase();
+        
+        if (!confirm.equals("yes")) {
+            System.out.println("Weekly meal plan generation cancelled.");
+            return;
+        }
 
         double dailyCalorieTarget = nutritionAnalyzer.calculateDailyCalorieNeeds(
                 currentUser.getWeightKg(),
@@ -526,18 +511,53 @@ public class Main {
 
         Map<String, List<Meal>> weeklyPlan = weeklyPlanGenerator.getWeeklyPlan();
         displayWeeklyPlan(weeklyPlan);
-
-        System.out.print("\nWould you like to generate a shopping list for this meal plan? (yes/no): ");
-        String generateList = scanner.nextLine().toLowerCase();
-        if (generateList.equals("yes")) {
-            shoppingListGenerator.generateFromWeeklyPlan(weeklyPlan);
-            displayShoppingList();
+        
+        // Save the weekly plan
+        if (weeklyPlanGenerator.saveWeeklyPlan()) {
+            System.out.println("Weekly meal plan saved successfully!");
+        } else {
+            System.out.println("Failed to save weekly meal plan.");
         }
     }
     
     /**
-     * Displays the weekly meal plan
+     * Displays the existing weekly meal plan without generating a new one
      */
+    private static void displayExistingWeeklyPlan() {
+        if (currentUser == null) {
+            System.out.println("No user profile exists. Please create a new profile first.");
+            createNewProfile();
+            return;
+        }
+        
+        System.out.println("\n===== VIEW EXISTING MEAL PLAN =====");
+        
+        // Check if a weekly plan exists
+        if (!weeklyPlanGenerator.weeklyPlanExists()) {
+            System.out.println("No weekly meal plan exists. Please generate a weekly plan first.");
+            return;
+        }
+        
+        // If the plan hasn't been loaded yet, load it
+        Map<String, List<Meal>> weeklyPlan = weeklyPlanGenerator.getWeeklyPlan();
+        boolean hasWeeklyPlan = weeklyPlan.values().stream()
+                .anyMatch(meals -> !meals.isEmpty());
+        
+        if (!hasWeeklyPlan) {
+            System.out.println("Loading your saved weekly meal plan...");
+            if (weeklyPlanGenerator.loadWeeklyPlan()) {
+                weeklyPlan = weeklyPlanGenerator.getWeeklyPlan();
+                System.out.println("Weekly meal plan loaded successfully!");
+            } else {
+                System.out.println("Failed to load weekly meal plan.");
+                return;
+            }
+        }
+        
+        // Display the weekly plan
+        displayWeeklyPlan(weeklyPlan);
+    }
+
     private static void displayWeeklyPlan(Map<String, List<Meal>> weeklyPlan) {
         System.out.println("\n===== YOUR WEEKLY MEAL PLAN =====");
         
@@ -774,64 +794,127 @@ public class Main {
      */
     private static void manageRecipes() {
         System.out.println("\n===== MANAGE RECIPES =====");
-        System.out.println("1. View All Recipes");
-        System.out.println("2. View Recipe Details");
-        System.out.println("3. Add New Recipe");
-        System.out.println("4. Back to Main Menu");
-        System.out.print("Enter your choice (1-4): ");
+        System.out.println("1. View Breakfast Recipes");
+        System.out.println("2. View Lunch Recipes");
+        System.out.println("3. View Dinner Recipes");
+        System.out.println("4. View Snack Recipes");
+        System.out.println("5. Back to Main Menu");
+        System.out.print("Enter your choice (1-5): ");
         
-        int choice = getUserChoice(1, 4);
+        int choice = getUserChoice(1, 5);
         
         switch (choice) {
             case 1:
-                viewAllRecipes();
+                viewBreakfastRecipes();
                 break;
             case 2:
-                viewRecipeDetails();
+                viewLunchRecipes();
                 break;
             case 3:
-                addNewRecipe();
+                viewDinnerRecipes();
                 break;
             case 4:
+                viewSnackRecipes();
+                break;
+            case 5:
                 return;
         }
     }
     
     /**
-     * Displays all recipes in the database
+     * Displays all breakfast recipes
      */
-    private static void viewAllRecipes() {
-        System.out.println("\n===== ALL RECIPES =====");
+    private static void viewBreakfastRecipes() {
+        System.out.println("\n===== BREAKFAST RECIPES =====");
+        List<Recipe> breakfastRecipes = recipeDatabase.stream()
+                .filter(recipe -> recipe.getName().toLowerCase().contains("breakfast") || 
+                        recipe.getName().toLowerCase().contains("toast") || 
+                        recipe.getName().toLowerCase().contains("cereal") || 
+                        recipe.getName().toLowerCase().contains("oatmeal") || 
+                        recipe.getName().toLowerCase().contains("pancake") || 
+                        recipe.getName().toLowerCase().contains("waffle"))
+                .collect(Collectors.toList());
         
-        if (recipeDatabase.isEmpty()) {
-            System.out.println("No recipes in the database.");
+        displayRecipeList(breakfastRecipes, "breakfast");
+    }
+    
+    /**
+     * Displays all lunch recipes
+     */
+    private static void viewLunchRecipes() {
+        System.out.println("\n===== LUNCH RECIPES =====");
+        List<Recipe> lunchRecipes = recipeDatabase.stream()
+                .filter(recipe -> recipe.getName().toLowerCase().contains("lunch") || 
+                        recipe.getName().toLowerCase().contains("sandwich") || 
+                        recipe.getName().toLowerCase().contains("salad") || 
+                        recipe.getName().toLowerCase().contains("soup") || 
+                        recipe.getName().toLowerCase().contains("wrap"))
+                .collect(Collectors.toList());
+        
+        displayRecipeList(lunchRecipes, "lunch");
+    }
+    
+    /**
+     * Displays all dinner recipes
+     */
+    private static void viewDinnerRecipes() {
+        System.out.println("\n===== DINNER RECIPES =====");
+        List<Recipe> dinnerRecipes = recipeDatabase.stream()
+                .filter(recipe -> recipe.getName().toLowerCase().contains("dinner") || 
+                        recipe.getName().toLowerCase().contains("pasta") || 
+                        recipe.getName().toLowerCase().contains("steak") || 
+                        recipe.getName().toLowerCase().contains("chicken") || 
+                        recipe.getName().toLowerCase().contains("fish") || 
+                        recipe.getName().toLowerCase().contains("salmon"))
+                .collect(Collectors.toList());
+        
+        displayRecipeList(dinnerRecipes, "dinner");
+    }
+    
+    /**
+     * Displays all snack recipes
+     */
+    private static void viewSnackRecipes() {
+        System.out.println("\n===== SNACK RECIPES =====");
+        List<Recipe> snackRecipes = recipeDatabase.stream()
+                .filter(recipe -> recipe.getName().toLowerCase().contains("snack") || 
+                        recipe.getName().toLowerCase().contains("nuts") || 
+                        recipe.getName().toLowerCase().contains("yogurt") || 
+                        recipe.getName().toLowerCase().contains("fruit") || 
+                        recipe.getName().toLowerCase().contains("bar"))
+                .collect(Collectors.toList());
+        
+        displayRecipeList(snackRecipes, "snack");
+    }
+    
+    /**
+     * Helper method to display a list of recipes and allow user to select one
+     */
+    private static void displayRecipeList(List<Recipe> recipes, String mealType) {
+        if (recipes.isEmpty()) {
+            System.out.println("No " + mealType + " recipes available in the database.");
             return;
         }
         
-        for (int i = 0; i < recipeDatabase.size(); i++) {
-            Recipe recipe = recipeDatabase.get(i);
-            System.out.println((i + 1) + ". " + recipe.getName() + 
-                    " (" + recipe.getDifficultyLevel() + ", " + 
-                    recipe.getTotalTimeMinutes() + " min)");
+        // Display all recipes
+        System.out.println("Select a recipe to view:");
+        for (int i = 0; i < recipes.size(); i++) {
+            System.out.println((i + 1) + ". " + recipes.get(i).getName());
         }
+        
+        // Get user selection
+        System.out.print("\nEnter the number of the recipe to view (1-" + recipes.size() + "): ");
+        int recipeIndex = getUserChoice(1, recipes.size()) - 1;
+        
+        // Display the selected recipe
+        Recipe selectedRecipe = recipes.get(recipeIndex);
+        displayRecipeDetails(selectedRecipe);
     }
     
     /**
      * Displays details of a specific recipe
      */
-    private static void viewRecipeDetails() {
-        if (recipeDatabase.isEmpty()) {
-            System.out.println("No recipes in the database.");
-            return;
-        }
-        
-        viewAllRecipes();
-        
-        System.out.print("\nEnter the number of the recipe to view (1-" + recipeDatabase.size() + "): ");
-        int recipeIndex = getUserChoice(1, recipeDatabase.size()) - 1;
-        
-        Recipe recipe = recipeDatabase.get(recipeIndex);
-        
+    private static void displayRecipeDetails(Recipe recipe) {
         System.out.println("\n===== " + recipe.getName().toUpperCase() + " =====");
         System.out.println("Difficulty: " + recipe.getDifficultyLevel());
         System.out.println("Preparation Time: " + recipe.getPreparationTimeMinutes() + " minutes");

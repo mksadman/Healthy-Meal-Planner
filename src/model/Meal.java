@@ -108,10 +108,42 @@ public class Meal {
         this.description = description;
     }
     
+    /**
+     * Sets nutrition values directly without calculating from ingredients.
+     * Used when loading meals from text files where we have the total values.
+     * 
+     * @param calories Total calories
+     * @param protein Total protein in grams
+     * @param carbs Total carbohydrates in grams
+     * @param fat Total fat in grams
+     */
+    public void setDirectNutritionValues(double calories, double protein, double carbs, double fat) {
+        this.calories = calories;
+        this.protein = protein;
+        this.carbs = carbs;
+        this.fat = fat;
+    }
+    
     @Override
     public String toString() {
         return name + " - " + description + " (" + dietaryType + ")\n" +
                "Nutrition: " + calories + " cal, " + protein + "g protein, " + 
                carbs + "g carbs, " + fat + "g fat";
+    }
+
+    public void setCalories(double calories) {
+        this.calories = calories;
+    }
+
+    public void setProtein(double protein) {
+        this.protein = protein;
+    }
+
+    public void setCarbs(double carbs) {
+        this.carbs = carbs;
+    }
+
+    public void setFat(double fat) {
+        this.fat = fat;
     }
 }

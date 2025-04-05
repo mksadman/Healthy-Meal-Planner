@@ -24,7 +24,7 @@ public class MealSuggester {
     public void addMeal(Meal meal) {
         mealDatabase.add(meal);
     }
-                
+
     public boolean removeMeal(Meal meal) {
         return mealDatabase.remove(meal);
     }
@@ -42,7 +42,7 @@ public class MealSuggester {
                 .filter(breakfast -> !caffeineFree || !breakfast.containsCaffeine())
                 .collect(Collectors.toList());
     }
-
+    
     public List<Lunch> suggestLunches(String dietaryType, boolean lowCarbOnly, boolean quickPrepOnly) {
         return mealDatabase.stream()
                 .filter(meal -> meal instanceof Lunch)
@@ -153,7 +153,6 @@ public class MealSuggester {
 
         List<Meal> filteredMeals = mealDatabase.stream()
                 .filter(meal -> {
-                    // Filter by meal type
                     if (mealType.equalsIgnoreCase("breakfast") && !(meal instanceof Breakfast)) return false;
                     if (mealType.equalsIgnoreCase("lunch") && !(meal instanceof Lunch)) return false;
                     if (mealType.equalsIgnoreCase("dinner") && !(meal instanceof Dinner)) return false;
@@ -219,6 +218,50 @@ public class MealSuggester {
                     
                     return name.contains(lowerCaseSearchTerm) || description.contains(lowerCaseSearchTerm);
                 })
+                .collect(Collectors.toList());
+    }
+    
+    /**
+     * Gets all breakfast meals
+     * @return List of all breakfast meals
+     */
+    public List<Breakfast> getAllBreakfasts() {
+        return mealDatabase.stream()
+                .filter(meal -> meal instanceof Breakfast)
+                .map(meal -> (Breakfast) meal)
+                .collect(Collectors.toList());
+    }
+    
+    /**
+     * Gets all lunch meals
+     * @return List of all lunch meals
+     */
+    public List<Lunch> getAllLunches() {
+        return mealDatabase.stream()
+                .filter(meal -> meal instanceof Lunch)
+                .map(meal -> (Lunch) meal)
+                .collect(Collectors.toList());
+    }
+    
+    /**
+     * Gets all dinner meals
+     * @return List of all dinner meals
+     */
+    public List<Dinner> getAllDinners() {
+        return mealDatabase.stream()
+                .filter(meal -> meal instanceof Dinner)
+                .map(meal -> (Dinner) meal)
+                .collect(Collectors.toList());
+    }
+    
+    /**
+     * Gets all snack meals
+     * @return List of all snack meals
+     */
+    public List<Snack> getAllSnacks() {
+        return mealDatabase.stream()
+                .filter(meal -> meal instanceof Snack)
+                .map(meal -> (Snack) meal)
                 .collect(Collectors.toList());
     }
 }
