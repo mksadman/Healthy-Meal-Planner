@@ -10,17 +10,17 @@ import java.util.stream.Collectors;
 public class MealSuggester {
     private List<Meal> mealDatabase;
     private NutritionAnalyzer nutritionAnalyzer;
-    
+
     public MealSuggester() {
         this.mealDatabase = new ArrayList<>();
         this.nutritionAnalyzer = new NutritionAnalyzer();
     }
-    
+
     public MealSuggester(List<Meal> mealDatabase) {
         this.mealDatabase = mealDatabase;
         this.nutritionAnalyzer = new NutritionAnalyzer();
     }
-    
+
     public void addMeal(Meal meal) {
         mealDatabase.add(meal);
     }
@@ -28,11 +28,11 @@ public class MealSuggester {
     public boolean removeMeal(Meal meal) {
         return mealDatabase.remove(meal);
     }
-    
+
     public List<Meal> getAllMeals() {
         return new ArrayList<>(mealDatabase);
     }
-    
+
     public List<Breakfast> suggestBreakfasts(String dietaryType, boolean highProteinOnly, boolean caffeineFree) {
         return mealDatabase.stream()
                 .filter(meal -> meal instanceof Breakfast)
@@ -42,7 +42,7 @@ public class MealSuggester {
                 .filter(breakfast -> !caffeineFree || !breakfast.containsCaffeine())
                 .collect(Collectors.toList());
     }
-    
+
     public List<Lunch> suggestLunches(String dietaryType, boolean lowCarbOnly, boolean quickPrepOnly) {
         return mealDatabase.stream()
                 .filter(meal -> meal instanceof Lunch)
@@ -112,7 +112,7 @@ public class MealSuggester {
         double mealProteinTarget;
         double mealCarbTarget;
         double mealFatTarget;
-        
+
         switch (mealType.toLowerCase()) {
             case "breakfast":
                 mealCalorieTarget = targetCalories * 0.25;
@@ -161,10 +161,10 @@ public class MealSuggester {
                     if (dietaryType != null && !meal.getDietaryType().equalsIgnoreCase(dietaryType)) return false;
 
                     return meal.getCalories() >= minCalories && meal.getCalories() <= maxCalories &&
-                           meal.getProtein() >= minProtein && meal.getProtein() <= maxProtein;
+                            meal.getProtein() >= minProtein && meal.getProtein() <= maxProtein;
                 })
                 .collect(Collectors.toList());
-        
+
         return filteredMeals;
     }
 
@@ -180,7 +180,7 @@ public class MealSuggester {
         mealPlan.put("lunch", lunches);
         mealPlan.put("dinner", dinners);
         mealPlan.put("snack", snacks);
-        
+
         return mealPlan;
     }
 
@@ -192,7 +192,7 @@ public class MealSuggester {
         List<String> lowerCaseIngredients = availableIngredients.stream()
                 .map(String::toLowerCase)
                 .collect(Collectors.toList());
-        
+
         return mealDatabase.stream()
                 .filter(meal -> {
                     List<String> mealIngredientNames = meal.getIngredients().stream()
@@ -203,24 +203,24 @@ public class MealSuggester {
                 })
                 .collect(Collectors.toList());
     }
-    
+
     public List<Meal> searchMealsByTerm(String searchTerm) {
         if (searchTerm == null || searchTerm.trim().isEmpty()) {
             return new ArrayList<>();
         }
-        
+
         String lowerCaseSearchTerm = searchTerm.toLowerCase();
-        
+
         return mealDatabase.stream()
                 .filter(meal -> {
                     String name = meal.getName() != null ? meal.getName().toLowerCase() : "";
                     String description = meal.getDescription() != null ? meal.getDescription().toLowerCase() : "";
-                    
+
                     return name.contains(lowerCaseSearchTerm) || description.contains(lowerCaseSearchTerm);
                 })
                 .collect(Collectors.toList());
     }
-    
+
     /**
      * Gets all breakfast meals
      * @return List of all breakfast meals
@@ -231,7 +231,7 @@ public class MealSuggester {
                 .map(meal -> (Breakfast) meal)
                 .collect(Collectors.toList());
     }
-    
+
     /**
      * Gets all lunch meals
      * @return List of all lunch meals
@@ -242,7 +242,7 @@ public class MealSuggester {
                 .map(meal -> (Lunch) meal)
                 .collect(Collectors.toList());
     }
-    
+
     /**
      * Gets all dinner meals
      * @return List of all dinner meals
@@ -253,7 +253,7 @@ public class MealSuggester {
                 .map(meal -> (Dinner) meal)
                 .collect(Collectors.toList());
     }
-    
+
     /**
      * Gets all snack meals
      * @return List of all snack meals

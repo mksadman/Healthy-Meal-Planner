@@ -10,7 +10,7 @@ import java.util.Arrays;
  */
 public class UserProfileManager {
     private static final String PROFILE_FILE = "user_profile.txt";
-    
+
     /**
      * Saves the user profile to a file
      * @param user The user profile to save
@@ -26,7 +26,7 @@ public class UserProfileManager {
             return false;
         }
     }
-    
+
     /**
      * Loads a user profile from a file
      * @return The loaded user profile, or null if no profile exists or an error occurred
@@ -36,7 +36,7 @@ public class UserProfileManager {
         if (!profileFile.exists()) {
             return null;
         }
-        
+
         try (ObjectInputStream ois = new ObjectInputStream(
                 new FileInputStream(PROFILE_FILE))) {
             return (User) ois.readObject();
@@ -45,7 +45,7 @@ public class UserProfileManager {
             return null;
         }
     }
-    
+
     /**
      * Checks if a user profile exists
      * @return true if a profile exists, false otherwise

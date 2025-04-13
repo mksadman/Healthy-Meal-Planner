@@ -203,12 +203,12 @@ public class WeeklyPlanGenerator {
         // If we need more calories, add snacks
         if (currentCalories < targetCalories) {
             List<Snack> snackOptions = mealSuggester.suggestSnacks(null, false, false);
-            
+
             // Count existing snacks
             long existingSnackCount = dayMeals.stream()
                     .filter(meal -> meal instanceof Snack)
                     .count();
-            
+
             // Only add more snacks if we have less than 2
             while (!snackOptions.isEmpty() && currentCalories < targetCalories * 0.9 && existingSnackCount < 2) {
                 // Filter out recently used snacks to ensure variety
@@ -491,7 +491,7 @@ public class WeeklyPlanGenerator {
         // Get all available snacks
         List<Snack> allSnacks = mealSuggester.suggestSnacks(null, false, false);
         int snackCount = 0;
-        
+
         // Add high-protein snacks if needed and if we haven't reached the snack limit
         if (neededProtein > 5 && snackCount < 2) { // Only adjust if we need at least 5g more protein
             List<Snack> highProteinSnacks = allSnacks.stream()
