@@ -1,0 +1,49 @@
+Monday:
+Breakfast,Scrambled Eggs with Cheese and Spinach,320.0,22.0,4.0,24.0
+Lunch,Mushroom and lentil burger with whole wheat bun,482.0,18.0,35.0,10.0
+Dinner,Cauliflower rice stir-fry with chicken,500.0,35.0,25.0,20.0
+Snack,Banana with almond butter,180.0,4.0,28.0,6.0
+Snack,Hard-boiled eggs with salt,150.0,12.0,1.0,10.0
+
+Tuesday:
+Breakfast,Overnight Oats with Almond Milk and Walnuts,370.0,10.0,50.0,16.0
+Lunch,Stir-fried tofu with soy sauce and bok choy,485.0,18.0,35.0,10.0
+Dinner,Baked chicken with mashed cauliflower,500.0,35.0,25.0,20.0
+Snack,Carrot and cucumber sticks with hummus,150.0,5.0,15.0,8.0
+Snack,Apple slices with peanut butter,180.0,4.0,28.0,6.0
+
+Wednesday:
+Breakfast,Baked Sweet Potato with Almond Butter,320.0,8.0,40.0,16.0
+Lunch,Chickpea and sweet potato stew,486.0,18.0,35.0,10.0
+Dinner,Grilled lamb chops with buttered zucchini,540.0,40.0,6.0,40.0
+Snack,Dark chocolate with walnuts,300.0,8.0,12.0,24.0
+Snack,Hard-boiled eggs with avocado,250.0,14.0,6.0,20.0
+
+Thursday:
+Breakfast,Scrambled Eggs with Avocado Slices,340.0,18.0,12.0,26.0
+Lunch,Cauliflower mash with steak and sautéed mushrooms,500.0,18.0,30.0,10.0
+Dinner,Paneer tikka with sautéed spinach,480.0,25.0,30.0,18.0
+Snack,Smoothie with banana and protein powder,280.0,12.0,35.0,10.0
+Snack,Coconut yogurt with granola,250.0,5.0,25.0,15.0
+
+Friday:
+Breakfast,Bulletproof Coffee with Coconut Oil,240.0,0.0,0.0,28.0
+Lunch,Paneer tikka with whole wheat naan,377.0,18.0,30.0,10.0
+Dinner,Chickpea curry with brown rice,450.0,20.0,40.0,15.0
+Snack,Trail mix with nuts and dried fruits,300.0,8.0,12.0,24.0
+Snack,Almond flour crackers with cream cheese,260.0,10.0,8.0,22.0
+
+Saturday:
+Breakfast,Whole Wheat Pancakes with Maple Syrup,420.0,12.0,70.0,10.0
+Lunch,Baked salmon with asparagus and garlic butter,480.0,28.0,10.0,15.0
+Dinner,Sweet potato and black bean tacos,480.0,25.0,30.0,18.0
+Snack,Hard-boiled eggs with salt,150.0,12.0,1.0,10.0
+Snack,Mixed nuts and dried fruits,300.0,8.0,12.0,24.0
+
+Sunday:
+Breakfast,Bulletproof Coffee with Coconut Oil,240.0,0.0,0.0,28.0
+Lunch,Paneer tikka with whole wheat naan,377.0,18.0,30.0,10.0
+Dinner,Vegan lentil soup with coconut milk,450.0,20.0,40.0,15.0
+Snack,Peanut butter and banana smoothie,280.0,12.0,35.0,10.0
+Snack,Smoothie with banana and protein powder,280.0,12.0,35.0,10.0
+
