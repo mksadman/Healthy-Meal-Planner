@@ -43,12 +43,11 @@ public class MealSuggester {
                 .collect(Collectors.toList());
     }
 
-    public List<Lunch> suggestLunches(String dietaryType, boolean lowCarbOnly, boolean quickPrepOnly) {
+    public List<Lunch> suggestLunches(String dietaryType, boolean quickPrepOnly) {
         return mealDatabase.stream()
                 .filter(meal -> meal instanceof Lunch)
                 .map(meal -> (Lunch) meal)
                 .filter(lunch -> dietaryType == null || lunch.getDietaryType().equalsIgnoreCase(dietaryType))
-                .filter(lunch -> !lowCarbOnly || lunch.isLowCarb())
                 .filter(lunch -> !quickPrepOnly || lunch.isQuickPrep())
                 .collect(Collectors.toList());
     }
