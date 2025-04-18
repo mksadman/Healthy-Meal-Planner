@@ -42,7 +42,7 @@ LUNCH MEALS
    6. Serve warm.
    Difficulty: Easy
    Prep time: 20 minutes
-   Dietary notes: Balanced meal option based on normal diet
+   Dietary notes: Balanced meal option based on normal diet, quick
 
 3. Tuna salad sandwich on whole grain bread
    Calories: 415
@@ -65,7 +65,7 @@ LUNCH MEALS
    6. Serve cold.
    Difficulty: Easy
    Prep time: 20 minutes
-   Dietary notes: Balanced meal option based on normal diet
+   Dietary notes: Balanced meal option based on normal diet, quick
 
 4. Lentil soup with whole wheat bread
    Calories: 356
@@ -135,7 +135,7 @@ LUNCH MEALS
    6. Serve warm.
    Difficulty: Easy
    Prep time: 20 minutes
-   Dietary notes: Balanced meal option based on normal diet
+   Dietary notes: Balanced meal option based on normal diet, quick
 
 7. Pasta with lean beef and marinara sauce
    Calories: 453
@@ -214,7 +214,7 @@ LUNCH MEALS
    5. Serve wrap with side salad.
    Difficulty: Easy
    Prep time: 20 minutes
-   Dietary notes: Balanced meal option based on normal diet
+   Dietary notes: Balanced meal option based on normal diet, quick
 
 10. Stuffed bell peppers with ground turkey and rice
    Calories: 475
@@ -302,7 +302,7 @@ LUNCH MEALS
    5. Serve warm.
    Difficulty: Easy
    Prep time: 20 minutes
-   Dietary notes: Balanced meal option based on vegetarian diet
+   Dietary notes: Balanced meal option based on vegetarian diet, quick
 
 14. Paneer tikka with whole wheat naan
    Calories: 377
@@ -359,7 +359,7 @@ LUNCH MEALS
    5. Serve warm.
    Difficulty: Easy
    Prep time: 20 minutes
-   Dietary notes: Balanced meal option based on vegetarian diet
+   Dietary notes: Balanced meal option based on vegetarian diet, quick
 
 17. Spaghetti with marinara and roasted eggplant
    Calories: 488
@@ -416,7 +416,7 @@ LUNCH MEALS
    5. Serve warm.
    Difficulty: Easy
    Prep time: 20 minutes
-   Dietary notes: Balanced meal option based on vegetarian diet
+   Dietary notes: Balanced meal option based on vegetarian diet, quick
 
 20. Stuffed mushrooms with spinach and ricotta
    Calories: 386
@@ -460,7 +460,7 @@ LUNCH MEALS
    5. Serve warm.
    Difficulty: Easy
    Prep time: 20 minutes
-   Dietary notes: Balanced meal option based on vegan diet
+   Dietary notes: Balanced meal option based on vegan diet, quick
 
 22. Lentil and vegetable curry with brown rice
    Calories: 459
@@ -498,7 +498,7 @@ LUNCH MEALS
    5. Serve warm.
    Difficulty: Easy
    Prep time: 20 minutes
-   Dietary notes: Balanced meal option based on vegan diet
+   Dietary notes: Balanced meal option based on vegan diet, quick
 
 24. Chickpea and sweet potato stew
    Calories: 486

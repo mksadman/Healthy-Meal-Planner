@@ -21,7 +21,7 @@ DINNER MEALS
    5. Serve salmon over quinoa with vegetables and lemon wedges.
    Difficulty: Medium
    Prep time: 25–30 minutes
-   Dietary notes: Balanced dinner for normal preferences
+   Dietary notes: Heart healthy comfort food; balanced dinner for normal preferences
 
 2. Chicken stir-fry with brown rice
    Calories: 500
@@ -58,7 +58,7 @@ DINNER MEALS
    3. Combine and serve warm, garnished as preferred.
    Difficulty: Medium
    Prep time: 25–40 minutes
-   Dietary notes: Balanced dinner for normal preferences
+   Dietary notes: Heart healthy; balanced dinner for normal preferences
 
 4. Turkey meatballs with whole wheat pasta
    Calories: 520
@@ -88,7 +88,7 @@ DINNER MEALS
    3. Combine and serve warm, garnished as preferred.
    Difficulty: Medium
    Prep time: 25–40 minutes
-   Dietary notes: Balanced dinner for normal preferences
+   Dietary notes: Comfort food; balanced dinner for normal preferences
 
 6. Baked chicken with roasted Brussels sprouts
    Calories: 500
@@ -118,7 +118,7 @@ DINNER MEALS
    3. Combine and serve warm, garnished as preferred.
    Difficulty: Medium
    Prep time: 25–40 minutes
-   Dietary notes: Balanced dinner for normal preferences
+   Dietary notes: Comfort food; balanced dinner for normal preferences
 
 8. Shrimp stir-fry with mixed vegetables
    Calories: 480
@@ -148,7 +148,7 @@ DINNER MEALS
    3. Combine and serve warm, garnished as preferred.
    Difficulty: Medium
    Prep time: 25–40 minutes
-   Dietary notes: Balanced dinner for normal preferences
+   Dietary notes: Heart healthy; balanced dinner for normal preferences
 
 10. Homemade vegetable pizza on whole wheat crust
    Calories: 520
@@ -189,7 +189,7 @@ DINNER MEALS
    6. Serve paneer tikka over sautéed spinach, garnished with cilantro.
    Difficulty: Medium
    Prep time: 25–30 minutes
-   Dietary notes: Balanced dinner for vegetarian preferences
+   Dietary notes: Comfort food; Balanced dinner for vegetarian preferences
 
 12. Mushroom risotto with parmesan cheese
    Calories: 480
@@ -204,7 +204,7 @@ DINNER MEALS
    3. Combine and serve warm, garnished as preferred.
    Difficulty: Medium
    Prep time: 25–40 minutes
-   Dietary notes: Balanced dinner for vegetarian preferences
+   Dietary notes: Comfort food; Balanced dinner for vegetarian preferences
 
 13. Lentil and vegetable stew
    Calories: 450
@@ -294,7 +294,7 @@ DINNER MEALS
    3. Combine and serve warm, garnished as preferred.
    Difficulty: Medium
    Prep time: 25–40 minutes
-   Dietary notes: Balanced dinner for vegetarian preferences
+   Dietary notes: Heart healthy comfort food; Balanced dinner for vegetarian preferences
 
 19. Grilled halloumi with roasted peppers
    Calories: 480
@@ -309,7 +309,7 @@ DINNER MEALS
    3. Combine and serve warm, garnished as preferred.
    Difficulty: Medium
    Prep time: 25–40 minutes
-   Dietary notes: Balanced dinner for vegetarian preferences
+   Dietary notes: Comfort food; Balanced dinner for vegetarian preferences
 
 20. Spinach and ricotta stuffed eggplant rolls
    Calories: 480
@@ -671,7 +671,7 @@ DINNER MEALS
    6. Serve chicken with roasted Brussels sprouts.
    Difficulty: Medium
    Prep time: 30–35 minutes
-   Dietary notes: Balanced dinner for low-carb preferences
+   Dietary notes: Heart healthy comfort food; Balanced dinner for low-carb preferences
 
 42. Baked salmon with creamy spinach
    Calories: 500
@@ -686,7 +686,7 @@ DINNER MEALS
    3. Combine and serve warm, garnished as preferred.
    Difficulty: Medium
    Prep time: 25–40 minutes
-   Dietary notes: Balanced dinner for low-carb preferences
+   Dietary notes: Heart healthy comfort food; Balanced dinner for low-carb preferences
 
 43. Cauliflower rice stir-fry with beef and peppers
    Calories: 600
@@ -701,7 +701,7 @@ DINNER MEALS
    3. Combine and serve warm, garnished as preferred.
    Difficulty: Medium
    Prep time: 25–40 minutes
-   Dietary notes: Balanced dinner for low-carb preferences
+   Dietary notes: Comfort food; Balanced dinner for low-carb preferences
 
 44. Keto lasagna with zucchini layers
    Calories: 400
@@ -716,7 +716,7 @@ DINNER MEALS
    3. Combine and serve warm, garnished as preferred.
    Difficulty: Medium
    Prep time: 25–40 minutes
-   Dietary notes: Balanced dinner for low-carb preferences
+   Dietary notes: Comfort food; Balanced dinner for low-carb preferences
 
 45. Stuffed avocados with shrimp salad
    Calories: 480
@@ -731,7 +731,7 @@ DINNER MEALS
    3. Combine and serve warm, garnished as preferred.
    Difficulty: Medium
    Prep time: 25–40 minutes
-   Dietary notes: Balanced dinner for low-carb preferences
+   Dietary notes: Comfort food; Balanced dinner for low-carb preferences
 
 46. Eggplant and mozzarella bake
    Calories: 480
@@ -761,7 +761,7 @@ DINNER MEALS
    3. Combine and serve warm, garnished as preferred.
    Difficulty: Medium
    Prep time: 25–40 minutes
-   Dietary notes: Balanced dinner for low-carb preferences
+   Dietary notes: Comfort food; Balanced dinner for low-carb preferences
 
 48. Zucchini noodles with ground turkey
    Calories: 520
@@ -806,7 +806,7 @@ DINNER MEALS
    3. Combine and serve warm, garnished as preferred.
    Difficulty: Medium
    Prep time: 25–40 minutes
-   Dietary notes: Balanced dinner for low-carb preferences
+   Dietary notes: Heart healthy; Balanced dinner for low-carb preferences
 
 [Keto]
 
@@ -914,7 +914,7 @@ DINNER MEALS
    10. Top with remaining cheese and bake for 15-20 minutes until cheese is bubbly.
    Difficulty: Medium
    Prep time: 40–45 minutes
-   Dietary notes: High-fat, low-carb dinner suitable for keto diet
+   Dietary notes: Comfort food; High-fat, low-carb dinner suitable for keto diet
 
 55. Salmon with lemon butter sauce
    Calories: 480
@@ -941,7 +941,7 @@ DINNER MEALS
    10. Serve salmon with lemon butter sauce drizzled on top and asparagus on the side.
    Difficulty: Medium
    Prep time: 25–30 minutes
-   Dietary notes: Rich in omega-3 fatty acids, perfect for keto diet
+   Dietary notes: Heart healthy comfort food; Rich in omega-3 fatty acids, perfect for keto diet
 
 56. Cheesy broccoli and turkey bacon casserole
    Calories: 490
@@ -969,7 +969,7 @@ DINNER MEALS
    10. Top with remaining cheese and bake for 15-20 minutes until bubbly and golden.
    Difficulty: Easy
    Prep time: 30–35 minutes
-   Dietary notes: Creamy, high-fat dish perfect for keto diet
+   Dietary notes: Comfort food; Creamy, high-fat dish perfect for keto diet
 
 57. Shrimp with garlic butter and spinach
    Calories: 460
@@ -996,7 +996,7 @@ DINNER MEALS
    9. Serve immediately.
    Difficulty: Easy
    Prep time: 20–25 minutes
-   Dietary notes: Quick, high-protein keto dinner option
+   Dietary notes: Heart healthy, comfort food; Quick, high-protein keto dinner option
 
 58. Cauliflower mac and cheese with turkey bacon
    Calories: 480

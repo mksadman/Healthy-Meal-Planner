@@ -45,7 +45,7 @@ SNACK MEALS
    3. Cool in ice water, peel, and season with salt and pepper
    Difficulty: Easy
    Prep time: 15 minutes
-   Dietary notes: Suitable for normal snack plans
+   Dietary notes: Suitable for normal snack plans; portable
 
 4. Whole wheat crackers with cheese
    Calories: 260
@@ -60,7 +60,7 @@ SNACK MEALS
    3. Add herbs if desired
    Difficulty: Very Easy
    Prep time: 3 minutes
-   Dietary notes: Suitable for normal snack plans
+   Dietary notes: Suitable for normal snack plans; portable
 
 5. Carrot and cucumber sticks with hummus
    Calories: 150
@@ -89,7 +89,7 @@ SNACK MEALS
    2. Store in an airtight container if not eating immediately
    Difficulty: Very Easy
    Prep time: 2 minutes
-   Dietary notes: Suitable for normal snack plans
+   Dietary notes: Suitable for normal snack plans; portable
 
 7. Cottage cheese with berries
    Calories: 250
@@ -117,7 +117,7 @@ SNACK MEALS
    2. Enjoy with almonds
    Difficulty: Very Easy
    Prep time: 1 minute
-   Dietary notes: Suitable for normal snack plans
+   Dietary notes: Suitable for normal snack plans; portable
 
 9. Banana with almond butter
    Calories: 180
@@ -130,7 +130,7 @@ SNACK MEALS
    2. Spread almond butter on banana slices or dip banana into almond butter
    Difficulty: Very Easy
    Prep time: 2 minutes
-   Dietary notes: Suitable for normal snack plans
+   Dietary notes: Suitable for normal snack plans; portable
 
 10. Granola bars
    Calories: 200
@@ -143,7 +143,7 @@ SNACK MEALS
    2. If homemade, follow specific recipe instructions
    Difficulty: Very Easy
    Prep time: 1-5 minutes
-   Dietary notes: Suitable for normal snack plans
+   Dietary notes: Suitable for normal snack plans; portable
 
 [Vegetarian]
 
@@ -158,7 +158,7 @@ SNACK MEALS
    2. Mix well and store in an airtight container if not eating immediately
    Difficulty: Very Easy
    Prep time: 2 minutes
-   Dietary notes: Suitable for vegetarian snack plans
+   Dietary notes: Suitable for vegetarian snack plans; portable
 
 12. Cheese cubes with whole wheat crackers
    Calories: 260
@@ -171,7 +171,7 @@ SNACK MEALS
    2. Serve with crackers
    Difficulty: Very Easy
    Prep time: 3 minutes
-   Dietary notes: Suitable for vegetarian snack plans
+   Dietary notes: Suitable for vegetarian snack plans; portable
 
 13. Apple with almond butter
    Calories: 180
@@ -200,7 +200,7 @@ SNACK MEALS
    3. Top with berries if desired
    Difficulty: Very Easy
    Prep time: 5 minutes
-   Dietary notes: Suitable for vegetarian snack plans
+   Dietary notes: Suitable for vegetarian snack plans; portable
 
 15. Peanut butter and banana smoothie
    Calories: 280
@@ -216,7 +216,7 @@ SNACK MEALS
    2. Pour into a glass and serve immediately
    Difficulty: Easy
    Prep time: 5 minutes
-   Dietary notes: Suitable for vegetarian snack plans
+   Dietary notes: Suitable for vegetarian snack plans; portable
 
 16. Baked sweet potato fries
    Calories: 150
@@ -233,7 +233,7 @@ SNACK MEALS
    4. Bake for 20-25 minutes, flipping halfway
    Difficulty: Medium
    Prep time: 30 minutes
-   Dietary notes: Suitable for vegetarian snack plans
+   Dietary notes: Suitable for vegetarian snack plans; portable
 
 17. Avocado toast on whole grain bread
    Calories: 260
@@ -282,7 +282,7 @@ SNACK MEALS
    3. Sprinkle with nutritional yeast and salt
    Difficulty: Easy
    Prep time: 5 minutes
-   Dietary notes: Suitable for vegetarian snack plans
+   Dietary notes: Suitable for vegetarian snack plans; portable
 
 20. Cottage cheese with sunflower seeds
    Calories: 250
@@ -315,7 +315,7 @@ SNACK MEALS
    3. Roast for 20-25 minutes until crispy
    Difficulty: Medium
    Prep time: 30 minutes
-   Dietary notes: Suitable for vegan snack plans
+   Dietary notes: Suitable for vegan snack plans; portable
 
 22. Almond butter with apple slices
    Calories: 180
@@ -328,7 +328,7 @@ SNACK MEALS
    2. Serve with almond butter for dipping
    Difficulty: Very Easy
    Prep time: 3 minutes
-   Dietary notes: Suitable for vegan snack plans
+   Dietary notes: Suitable for vegan snack plans; portable
 
 23. Hummus with veggie sticks
    Calories: 150
@@ -341,7 +341,7 @@ SNACK MEALS
    2. Serve with hummus for dipping
    Difficulty: Very Easy
    Prep time: 5 minutes
-   Dietary notes: Suitable for vegan snack plans
+   Dietary notes: Suitable for vegan snack plans;
 
 24. Chia pudding with coconut milk
    Calories: 320
@@ -357,7 +357,7 @@ SNACK MEALS
    3. Stir before serving
    Difficulty: Easy
    Prep time: 5 minutes (plus setting time)
-   Dietary notes: Suitable for vegan snack plans
+   Dietary notes: Suitable for vegan snack plans;
 
 25. Vegan protein smoothie
    Calories: 280
@@ -373,7 +373,7 @@ SNACK MEALS
    2. Pour into a glass and serve immediately
    Difficulty: Easy
    Prep time: 5 minutes
-   Dietary notes: Suitable for vegan snack plans
+   Dietary notes: Suitable for vegan snack plans; portable
 
 26. Dark chocolate with walnuts
    Calories: 300
@@ -386,7 +386,7 @@ SNACK MEALS
    2. Enjoy with walnuts
    Difficulty: Very Easy
    Prep time: 1 minute
-   Dietary notes: Suitable for vegan snack plans
+   Dietary notes: Suitable for vegan snack plans; portable
 
 27. Coconut yogurt with granola
    Calories: 250
@@ -400,7 +400,7 @@ SNACK MEALS
    2. Top with granola and optional berries
    Difficulty: Very Easy
    Prep time: 2 minutes
-   Dietary notes: Suitable for vegan snack plans
+   Dietary notes: Suitable for vegan snack plans; portable
 
 28. Homemade energy balls with dates and nuts
    Calories: 300
@@ -416,7 +416,7 @@ SNACK MEALS
    3. Refrigerate for at least 30 minutes
    Difficulty: Medium
    Prep time: 15 minutes (plus chilling time)
-   Dietary notes: Suitable for vegan snack plans
+   Dietary notes: Suitable for vegan snack plans; portable
 
 29. Avocado on rice cakes
    Calories: 200
@@ -432,7 +432,7 @@ SNACK MEALS
    3. Season with salt, pepper, and optional toppings
    Difficulty: Very Easy
    Prep time: 3 minutes
-   Dietary notes: Suitable for vegan snack plans
+   Dietary notes: Suitable for vegan snack plans; portable
 
 30. Peanut butter-stuffed celery sticks
    Calories: 200
@@ -463,7 +463,7 @@ SNACK MEALS
    2. Top with optional ingredients
    Difficulty: Very Easy
    Prep time: 2 minutes
-   Dietary notes: Suitable for gluten-free snack plans
+   Dietary notes: Suitable for gluten-free snack plans; portable
 
 32. Yogurt with gluten-free granola
    Calories: 250
@@ -477,7 +477,7 @@ SNACK MEALS
    2. Top with granola and optional ingredients
    Difficulty: Very Easy
    Prep time: 2 minutes
-   Dietary notes: Suitable for gluten-free snack plans
+   Dietary notes: Suitable for gluten-free snack plans; portable
 
 33. Mixed nuts with dried apricots
    Calories: 300
@@ -489,7 +489,7 @@ SNACK MEALS
    1. Mix nuts and dried apricots in a small container
    Difficulty: Very Easy
    Prep time: 1 minute
-   Dietary notes: Suitable for gluten-free snack plans
+   Dietary notes: Suitable for gluten-free snack plans; portable
 
 34. Hard-boiled eggs with salt
    Calories: 150
@@ -503,7 +503,7 @@ SNACK MEALS
    3. Cool in ice water, peel, and season with salt
    Difficulty: Easy
    Prep time: 15 minutes
-   Dietary notes: Suitable for gluten-free snack plans
+   Dietary notes: Suitable for gluten-free snack plans;
 
 35. Baked apple slices with cinnamon
    Calories: 180
@@ -520,7 +520,7 @@ SNACK MEALS
    4. Drizzle with honey if desired
    Difficulty: Easy
    Prep time: 20 minutes
-   Dietary notes: Suitable for gluten-free snack plans
+   Dietary notes: Suitable for gluten-free snack plans;
 
 36. Cucumber and guacamole dip
    Calories: 200
@@ -535,7 +535,7 @@ SNACK MEALS
    2. Serve with guacamole for dipping
    Difficulty: Very Easy
    Prep time: 5 minutes
-   Dietary notes: Suitable for gluten-free snack plans
+   Dietary notes: Suitable for gluten-free snack plans;
 
 37. Cheese with gluten-free crackers
    Calories: 260
@@ -548,7 +548,7 @@ SNACK MEALS
    2. Serve with gluten-free crackers
    Difficulty: Very Easy
    Prep time: 2 minutes
-   Dietary notes: Suitable for gluten-free snack plans
+   Dietary notes: Suitable for gluten-free snack plans; portable
 
 38. Smoothie with banana and protein powder
    Calories: 280
@@ -563,7 +563,7 @@ SNACK MEALS
    2. Pour into a glass and serve immediately
    Difficulty: Easy
    Prep time: 5 minutes
-   Dietary notes: Suitable for gluten-free snack plans
+   Dietary notes: Suitable for gluten-free snack plans; portable
 
 39. Gluten-free popcorn with sea salt
    Calories: 150
@@ -578,7 +578,7 @@ SNACK MEALS
    3. Sprinkle with sea salt
    Difficulty: Easy
    Prep time: 5 minutes
-   Dietary notes: Suitable for gluten-free snack plans
+   Dietary notes: Suitable for gluten-free snack plans; portable
 
 40. Roasted pumpkin seeds
    Calories: 180
@@ -594,7 +594,7 @@ SNACK MEALS
    3. Roast for 10-15 minutes until golden
    Difficulty: Easy
    Prep time: 20 minutes
-   Dietary notes: Suitable for gluten-free snack plans
+   Dietary notes: Suitable for gluten-free snack plans; portable
 
 [Low-Carb]
 
@@ -611,7 +611,7 @@ SNACK MEALS
    3. Season with salt and pepper
    Difficulty: Easy
    Prep time: 15 minutes
-   Dietary notes: Suitable for low-carb snack plans
+   Dietary notes: Suitable for low-carb snack plans;
 
 42. Celery sticks with cream cheese
    Calories: 150
@@ -626,7 +626,7 @@ SNACK MEALS
    3. Sprinkle with optional seasoning
    Difficulty: Very Easy
    Prep time: 3 minutes
-   Dietary notes: Suitable for low-carb snack plans
+   Dietary notes: Suitable for low-carb snack plans;
 
 43. Almonds and walnuts mix
    Calories: 300
@@ -638,7 +638,7 @@ SNACK MEALS
    1. Mix nuts in a small container
    Difficulty: Very Easy
    Prep time: 1 minute
-   Dietary notes: Suitable for low-carb snack plans
+   Dietary notes: Suitable for low-carb snack plans; portable
 
 44. Olives with feta cheese
    Calories: 200
@@ -652,7 +652,7 @@ SNACK MEALS
    2. Drizzle with olive oil and sprinkle with oregano if desired
    Difficulty: Very Easy
    Prep time: 2 minutes
-   Dietary notes: Suitable for low-carb snack plans
+   Dietary notes: Suitable for low-carb snack plans; portable
 
 45. Chicken and cheese roll-ups
    Calories: 200
@@ -667,7 +667,7 @@ SNACK MEALS
    3. Roll up and secure with toothpicks if needed
    Difficulty: Very Easy
    Prep time: 5 minutes
-   Dietary notes: Suitable for low-carb snack plans
+   Dietary notes: Suitable for low-carb snack plans; portable
 
 46. Cottage cheese with chia seeds
    Calories: 250
@@ -681,7 +681,7 @@ SNACK MEALS
    2. Add optional flavorings
    Difficulty: Very Easy
    Prep time: 2 minutes
-   Dietary notes: Suitable for low-carb snack plans
+   Dietary notes: Suitable for low-carb snack plans; portable
 
 47. Cucumber slices with guacamole
    Calories: 150
@@ -694,7 +694,7 @@ SNACK MEALS
    2. Serve with guacamole for dipping
    Difficulty: Very Easy
    Prep time: 5 minutes
-   Dietary notes: Suitable for low-carb snack plans
+   Dietary notes: Suitable for low-carb snack plans;
 
 48. Zucchini chips with seasoning
    Calories: 100
@@ -711,7 +711,7 @@ SNACK MEALS
    4. Bake for 2 hours until crispy
    Difficulty: Medium
    Prep time: 2 hours 15 minutes
-   Dietary notes: Suitable for low-carb snack plans
+   Dietary notes: Suitable for low-carb snack plans; portable
 
 49. Greek yogurt with flaxseeds
    Calories: 250
@@ -725,7 +725,7 @@ SNACK MEALS
    2. Add optional toppings
    Difficulty: Very Easy
    Prep time: 2 minutes
-   Dietary notes: Suitable for low-carb snack plans
+   Dietary notes: Suitable for low-carb snack plans; portable
 
 50. Turkey-wrapped avocado slices
    Calories: 200
@@ -741,7 +741,7 @@ SNACK MEALS
    3. Season and roll up
    Difficulty: Very Easy
    Prep time: 5 minutes
-   Dietary notes: Suitable for low-carb snack plans
+   Dietary notes: Suitable for low-carb snack plans;
 
 [Keto]
 
@@ -757,7 +757,7 @@ SNACK MEALS
    2. Roll turkey slices and arrange with cheese
    Difficulty: Very Easy
    Prep time: 3 minutes
-   Dietary notes: Suitable for keto snack plans
+   Dietary notes: Suitable for keto snack plans; portable
 
 52. Boiled eggs with butter
    Calories: 150
@@ -771,7 +771,7 @@ SNACK MEALS
    2. Top with butter and seasonings
    Difficulty: Easy
    Prep time: 15 minutes
-   Dietary notes: Suitable for keto snack plans
+   Dietary notes: Suitable for keto snack plans;
 
 53. Cheese crisps with guacamole
    Calories: 200
@@ -786,7 +786,7 @@ SNACK MEALS
    4. Let cool and serve with guacamole
    Difficulty: Medium
    Prep time: 15 minutes
-   Dietary notes: Suitable for keto snack plans
+   Dietary notes: Suitable for keto snack plans; portable
 
 54. Avocado deviled eggs
    Calories: 150
@@ -804,7 +804,7 @@ SNACK MEALS
    4. Garnish with optional toppings
    Difficulty: Medium
    Prep time: 20 minutes
-   Dietary notes: Suitable for keto snack plans
+   Dietary notes: Suitable for keto snack plans;
 
 55. Keto fat bombs with coconut oil
    Calories: 200
@@ -821,7 +821,7 @@ SNACK MEALS
    4. Freeze until solid (about 30 minutes)
    Difficulty: Medium
    Prep time: 10 minutes (plus freezing time)
-   Dietary notes: Suitable for keto snack plans
+   Dietary notes: Suitable for keto snack plans; portable
 
 56. Macadamia nuts with dark chocolate
    Calories: 300
@@ -834,7 +834,7 @@ SNACK MEALS
    2. Mix with macadamia nuts
    Difficulty: Very Easy
    Prep time: 1 minute
-   Dietary notes: Suitable for keto snack plans
+   Dietary notes: Suitable for keto snack plans; portable
 
 57. Cucumber slices with tuna salad
    Calories: 200
@@ -851,7 +851,7 @@ SNACK MEALS
    3. Top cucumber slices with tuna mixture
    Difficulty: Easy
    Prep time: 10 minutes
-   Dietary notes: Suitable for keto snack plans
+   Dietary notes: Suitable for keto snack plans;
 
 58. Cauliflower hummus with cheese chips
    Calories: 200
@@ -868,7 +868,7 @@ SNACK MEALS
    3. Serve hummus with cheese chips
    Difficulty: Medium
    Prep time: 25 minutes
-   Dietary notes: Suitable for keto snack plans
+   Dietary notes: Suitable for keto snack plans;
 
 59. Almond flour crackers with cream cheese
    Calories: 260
@@ -886,7 +886,7 @@ SNACK MEALS
    5. Cool and top with cream cheese
    Difficulty: Medium
    Prep time: 25 minutes
-   Dietary notes: Suitable for keto snack plans
+   Dietary notes: Suitable for keto snack plans; portable
 
 60. Chia pudding with coconut milk and MCT oil
    Calories: 320
@@ -903,4 +903,4 @@ SNACK MEALS
    3. Stir before serving
    Difficulty: Easy
    Prep time: 5 minutes (plus setting time)
-   Dietary notes: Suitable for keto snack plans
+   Dietary notes: Suitable for keto snack plans;

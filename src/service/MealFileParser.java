@@ -15,30 +15,35 @@ public class MealFileParser {
         List<Breakfast> breakfasts = new ArrayList<>();
         try {
             String content = new String(Files.readAllBytes(Paths.get(filePath)));
-            Pattern mealPattern = Pattern.compile("\\d+\\.\\s+([^\\n]+)\\s+Calories:\\s+(\\d+)\\s+Macros:\\s+([^\\n]+)\\s+Ingredients:[\\s\\S]+?Dietary notes:\\s+([^\\n]+)");
-            Matcher matcher = mealPattern.matcher(content);
+            Pattern sectionPattern = Pattern.compile("\\[(.+?)\\](.*?)(?=\\n\\[|\\z)", Pattern.DOTALL);
+            Matcher sectionMatcher = sectionPattern.matcher(content);
+            while (sectionMatcher.find()) {
+                String dietaryType = sectionMatcher.group(1).trim();
+                String sectionContent = sectionMatcher.group(2);
+                Pattern mealPattern = Pattern.compile("\\d+\\.\\s+([^\\n]+)\\s+Calories:\\s+(\\d+)\\s+Macros:\\s+([^\\n]+)\\s+Ingredients:[\\s\\S]+?Dietary notes:\\s+([^\\n]+)");
+                Matcher matcher = mealPattern.matcher(sectionContent);
+                while (matcher.find()) {
+                    String name = matcher.group(1).trim();
+                    double calories = Double.parseDouble(matcher.group(2).trim());
+                    String macrosText = matcher.group(3).trim();
+                    String dietaryNotes = matcher.group(4).trim();
 
-            while (matcher.find()) {
-                String name = matcher.group(1).trim();
-                double calories = Double.parseDouble(matcher.group(2).trim());
-                String macrosText = matcher.group(3).trim();
-                String dietaryNotes = matcher.group(4).trim();
+                    double protein = extractMacroValue(macrosText, "protein");
+                    double fat = extractMacroValue(macrosText, "fat");
+                    double carbs = extractMacroValue(macrosText, "carbs");
+                    double fiber = extractMacroValue(macrosText, "fiber");
 
-                double protein = extractMacroValue(macrosText, "protein");
-                double fat = extractMacroValue(macrosText, "fat");
-                double carbs = extractMacroValue(macrosText, "carbs");
-                double fiber = extractMacroValue(macrosText, "fiber");
+                    Breakfast breakfast = new Breakfast(name, dietaryType, "A healthy breakfast option");
 
-                Breakfast breakfast = new Breakfast(name, dietaryNotes, "A healthy breakfast option");
+                    breakfast.setDirectNutritionValues(calories, protein, carbs, fat);
 
-                breakfast.setDirectNutritionValues(calories, protein, carbs, fat);
+                    breakfast.setHighProtein(protein >= 15);
+                    breakfast.setContainsCaffeine(dietaryNotes.toLowerCase().contains("caffeine") ||
+                            name.toLowerCase().contains("coffee") ||
+                            name.toLowerCase().contains("tea"));
 
-                breakfast.setHighProtein(protein >= 15);
-                breakfast.setContainsCaffeine(dietaryNotes.toLowerCase().contains("caffeine") ||
-                        name.toLowerCase().contains("coffee") ||
-                        name.toLowerCase().contains("tea"));
-
-                breakfasts.add(breakfast);
+                    breakfasts.add(breakfast);
+                }
             }
         } catch (IOException e) {
             System.err.println("Error reading breakfast file: " + e.getMessage());
@@ -50,30 +55,34 @@ public class MealFileParser {
         List<Lunch> lunches = new ArrayList<>();
         try {
             String content = new String(Files.readAllBytes(Paths.get(filePath)));
-            Pattern mealPattern = Pattern.compile("\\d+\\.\\s+([^\\n]+)\\s+Calories:\\s+(\\d+)\\s+Macros:\\s+([^\\n]+)\\s+Ingredients:[\\s\\S]+?Dietary notes:\\s+([^\\n]+)");
-            Matcher matcher = mealPattern.matcher(content);
+            Pattern sectionPattern = Pattern.compile("\\[(.+?)\\](.*?)(?=\\n\\[|\\z)", Pattern.DOTALL);
+            Matcher sectionMatcher = sectionPattern.matcher(content);
+            while (sectionMatcher.find()) {
+                String dietaryType = sectionMatcher.group(1).trim();
+                String sectionContent = sectionMatcher.group(2);
+                Pattern mealPattern = Pattern.compile("\\d+\\.\\s+([^\\n]+)\\s+Calories:\\s+(\\d+)\\s+Macros:\\s+([^\\n]+)\\s+Ingredients:[\\s\\S]+?Dietary notes:\\s+([^\\n]+)");
+                Matcher matcher = mealPattern.matcher(sectionContent);
+                while (matcher.find()) {
+                    String name = matcher.group(1).trim();
+                    double calories = Double.parseDouble(matcher.group(2).trim());
+                    String macrosText = matcher.group(3).trim();
+                    String dietaryNotes = matcher.group(4).trim();
 
-            while (matcher.find()) {
-                String name = matcher.group(1).trim();
-                double calories = Double.parseDouble(matcher.group(2).trim());
-                String macrosText = matcher.group(3).trim();
-                String dietaryNotes = matcher.group(4).trim();
+                    double protein = extractMacroValue(macrosText, "protein");
+                    double fat = extractMacroValue(macrosText, "fat");
+                    double carbs = extractMacroValue(macrosText, "carbs");
+                    double fiber = extractMacroValue(macrosText, "fiber");
 
-                double protein = extractMacroValue(macrosText, "protein");
-                double fat = extractMacroValue(macrosText, "fat");
-                double carbs = extractMacroValue(macrosText, "carbs");
-                double fiber = extractMacroValue(macrosText, "fiber");
+                    Lunch lunch = new Lunch(name, dietaryType, "A healthy lunch option");
 
-                Lunch lunch = new Lunch(name, dietaryNotes, "A healthy lunch option");
+                    lunch.setDirectNutritionValues(calories, protein, carbs, fat);
 
-                lunch.setDirectNutritionValues(calories, protein, carbs, fat);
+                    lunch.setQuickPrep(dietaryNotes.toLowerCase().contains("quick") ||
+                            dietaryNotes.toLowerCase().contains("easy") ||
+                            name.toLowerCase().contains("quick"));
 
-                lunch.setLowCarb(carbs < 30);
-                lunch.setQuickPrep(dietaryNotes.toLowerCase().contains("quick") ||
-                        dietaryNotes.toLowerCase().contains("easy") ||
-                        name.toLowerCase().contains("quick"));
-
-                lunches.add(lunch);
+                    lunches.add(lunch);
+                }
             }
         } catch (IOException e) {
             System.err.println("Error reading lunch file: " + e.getMessage());
@@ -85,33 +94,38 @@ public class MealFileParser {
         List<Dinner> dinners = new ArrayList<>();
         try {
             String content = new String(Files.readAllBytes(Paths.get(filePath)));
-            Pattern mealPattern = Pattern.compile("\\d+\\.\\s+([^\\n]+)\\s+Calories:\\s+(\\d+)\\s+Macros:\\s+([^\\n]+)\\s+Ingredients:[\\s\\S]+?Dietary notes:\\s+([^\\n]+)");
-            Matcher matcher = mealPattern.matcher(content);
+            Pattern sectionPattern = Pattern.compile("\\[(.+?)\\](.*?)(?=\\n\\[|\\z)", Pattern.DOTALL);
+            Matcher sectionMatcher = sectionPattern.matcher(content);
+            while (sectionMatcher.find()) {
+                String dietaryType = sectionMatcher.group(1).trim();
+                String sectionContent = sectionMatcher.group(2);
+                Pattern mealPattern = Pattern.compile("\\d+\\.\\s+([^\\n]+)\\s+Calories:\\s+(\\d+)\\s+Macros:\\s+([^\\n]+)\\s+Ingredients:[\\s\\S]+?Dietary notes:\\s+([^\\n]+)");
+                Matcher matcher = mealPattern.matcher(sectionContent);
+                while (matcher.find()) {
+                    String name = matcher.group(1).trim();
+                    double calories = Double.parseDouble(matcher.group(2).trim());
+                    String macrosText = matcher.group(3).trim();
+                    String dietaryNotes = matcher.group(4).trim();
 
-            while (matcher.find()) {
-                String name = matcher.group(1).trim();
-                double calories = Double.parseDouble(matcher.group(2).trim());
-                String macrosText = matcher.group(3).trim();
-                String dietaryNotes = matcher.group(4).trim();
+                    double protein = extractMacroValue(macrosText, "protein");
+                    double fat = extractMacroValue(macrosText, "fat");
+                    double carbs = extractMacroValue(macrosText, "carbs");
+                    double fiber = extractMacroValue(macrosText, "fiber");
 
-                double protein = extractMacroValue(macrosText, "protein");
-                double fat = extractMacroValue(macrosText, "fat");
-                double carbs = extractMacroValue(macrosText, "carbs");
-                double fiber = extractMacroValue(macrosText, "fiber");
+                    Dinner dinner = new Dinner(name, dietaryType, "A healthy dinner option");
 
-                Dinner dinner = new Dinner(name, dietaryNotes, "A healthy dinner option");
+                    dinner.setDirectNutritionValues(calories, protein, carbs, fat);
 
-                dinner.setDirectNutritionValues(calories, protein, carbs, fat);
+                    dinner.setHeartHealthy(dietaryNotes.toLowerCase().contains("heart") ||
+                            fat < 15 ||
+                            dietaryNotes.toLowerCase().contains("omega"));
+                    dinner.setComfortFood(name.toLowerCase().contains("stew") ||
+                            name.toLowerCase().contains("chili") ||
+                            name.toLowerCase().contains("pasta") ||
+                            dietaryNotes.toLowerCase().contains("comfort"));
 
-                dinner.setHeartHealthy(dietaryNotes.toLowerCase().contains("heart") ||
-                        fat < 15 ||
-                        dietaryNotes.toLowerCase().contains("omega"));
-                dinner.setComfortFood(name.toLowerCase().contains("stew") ||
-                        name.toLowerCase().contains("chili") ||
-                        name.toLowerCase().contains("pasta") ||
-                        dietaryNotes.toLowerCase().contains("comfort"));
-
-                dinners.add(dinner);
+                    dinners.add(dinner);
+                }
             }
         } catch (IOException e) {
             System.err.println("Error reading dinner file: " + e.getMessage());
@@ -123,31 +137,36 @@ public class MealFileParser {
         List<Snack> snacks = new ArrayList<>();
         try {
             String content = new String(Files.readAllBytes(Paths.get(filePath)));
-            Pattern mealPattern = Pattern.compile("\\d+\\.\\s+([^\\n]+)\\s+Calories:\\s+(\\d+)\\s+Macros:\\s+([^\\n]+)\\s+Ingredients:[\\s\\S]+?Dietary notes:\\s+([^\\n]+)");
-            Matcher matcher = mealPattern.matcher(content);
+            Pattern sectionPattern = Pattern.compile("\\[(.+?)\\](.*?)(?=\\n\\[|\\z)", Pattern.DOTALL);
+            Matcher sectionMatcher = sectionPattern.matcher(content);
+            while (sectionMatcher.find()) {
+                String dietaryType = sectionMatcher.group(1).trim();
+                String sectionContent = sectionMatcher.group(2);
+                Pattern mealPattern = Pattern.compile("\\d+\\.\\s+([^\\n]+)\\s+Calories:\\s+(\\d+)\\s+Macros:\\s+([^\\n]+)\\s+Ingredients:[\\s\\S]+?Dietary notes:\\s+([^\\n]+)");
+                Matcher matcher = mealPattern.matcher(sectionContent);
+                while (matcher.find()) {
+                    String name = matcher.group(1).trim();
+                    double calories = Double.parseDouble(matcher.group(2).trim());
+                    String macrosText = matcher.group(3).trim();
+                    String dietaryNotes = matcher.group(4).trim();
 
-            while (matcher.find()) {
-                String name = matcher.group(1).trim();
-                double calories = Double.parseDouble(matcher.group(2).trim());
-                String macrosText = matcher.group(3).trim();
-                String dietaryNotes = matcher.group(4).trim();
+                    double protein = extractMacroValue(macrosText, "protein");
+                    double fat = extractMacroValue(macrosText, "fat");
+                    double carbs = extractMacroValue(macrosText, "carbs");
+                    double fiber = extractMacroValue(macrosText, "fiber");
 
-                double protein = extractMacroValue(macrosText, "protein");
-                double fat = extractMacroValue(macrosText, "fat");
-                double carbs = extractMacroValue(macrosText, "carbs");
-                double fiber = extractMacroValue(macrosText, "fiber");
+                    Snack snack = new Snack(name, dietaryType, "A healthy snack option");
 
-                Snack snack = new Snack(name, dietaryNotes, "A healthy snack option");
+                    snack.setDirectNutritionValues(calories, protein, carbs, fat);
 
-                snack.setDirectNutritionValues(calories, protein, carbs, fat);
+                    snack.setLowCalorie(calories <= 200);
+                    snack.setPortable(dietaryNotes.toLowerCase().contains("portable") ||
+                            name.toLowerCase().contains("bar") ||
+                            name.toLowerCase().contains("trail mix") ||
+                            dietaryNotes.toLowerCase().contains("on-the-go"));
 
-                snack.setLowCalorie(calories <= 200);
-                snack.setPortable(dietaryNotes.toLowerCase().contains("portable") ||
-                        name.toLowerCase().contains("bar") ||
-                        name.toLowerCase().contains("trail mix") ||
-                        dietaryNotes.toLowerCase().contains("on-the-go"));
-
-                snacks.add(snack);
+                    snacks.add(snack);
+                }
             }
         } catch (IOException e) {
             System.err.println("Error reading snack file: " + e.getMessage());
